@@ -6,11 +6,19 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool FacingLeft
+    {
+        get { return facingLeft; }
+        set { facingLeft = value; }
+    }
+    
     [SerializeField] private float moveSpeed = 5.0f;
     private Vector2 _movement;
     private Rigidbody2D _rigidbody;
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
+
+    private bool facingLeft = false;
     
     void Awake()
     {
@@ -50,12 +58,12 @@ public class PlayerController : MonoBehaviour
         if (mousePosition.x < playerPosition.x)
         {
             _spriteRenderer.flipX = true;
-            // transform.localScale = new Vector3(-1, 1, 1);
+            FacingLeft = true;
         }
         else
         {
             _spriteRenderer.flipX = false;
-            // transform.localScale = new Vector3(1, 1, 1);
+            FacingLeft = false;
         }
     }
 }
