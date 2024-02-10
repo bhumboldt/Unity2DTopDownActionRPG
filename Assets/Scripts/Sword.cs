@@ -12,6 +12,7 @@ public class Sword : MonoBehaviour
 
     [SerializeField] private GameObject slashAnimPrefab;
     [SerializeField] private Transform slashAnimSpawnPoint;
+    [SerializeField] private Transform weaponCollider;
 
     private GameObject slashAnim;
     
@@ -59,15 +60,23 @@ public class Sword : MonoBehaviour
         if (mousePosition.x < playerPosition.x)
         {
             _activeWeapon.transform.rotation = Quaternion.Euler(0, -180, 0);
+            weaponCollider.transform.rotation = Quaternion.Euler(0, -180, 0);
         }
         else
         {
             _activeWeapon.transform.rotation = Quaternion.Euler(0, 0, 0);
+            weaponCollider.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
+    }
+
+    public void DoneAttackingAnimation()
+    {
+        weaponCollider.gameObject.SetActive(false);
     }
 
     public void OnAttack(InputValue value)
     {
+        weaponCollider.gameObject.SetActive(true);
         _animator.SetTrigger("Attack");
         slashAnim = Instantiate(slashAnimPrefab, slashAnimSpawnPoint.position, Quaternion.identity);
         slashAnim.transform.parent = this.transform.parent;
