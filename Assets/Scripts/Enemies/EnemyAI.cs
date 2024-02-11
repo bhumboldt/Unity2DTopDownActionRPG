@@ -11,6 +11,8 @@ public class EnemyAI : MonoBehaviour
         Roaming
     };
 
+    [SerializeField] private float roamingChangeDirFloat = 2f;
+
     private State state;
     private EnemyPathfinding pathfinding;
 
@@ -31,7 +33,7 @@ public class EnemyAI : MonoBehaviour
         {
             Vector2 roamingPosition = GetRoamingPosition();
             pathfinding.SetMoveDirection(roamingPosition);
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(roamingChangeDirFloat);
         }
     }
 
