@@ -13,7 +13,6 @@ public class DamageSource : MonoBehaviour
         if (enemyHealth != null)
         {
             enemyHealth.TakeDamage(damage);
-            Debug.Log("Enemy hit!");
         }
     }
 }
