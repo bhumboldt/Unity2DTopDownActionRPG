@@ -15,6 +15,7 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private InputActionAsset _inputActionAsset;
     [SerializeField] private float dashSpeed = 4f;
     [SerializeField] private TrailRenderer _trailRenderer;
+    [SerializeField] private Transform weaponCollider;
     
     private Vector2 _movement;
     private Rigidbody2D _rigidbody;
@@ -43,6 +44,11 @@ public class PlayerController : Singleton<PlayerController>
     {
         this.Move();
         this.FlipPlayerPosition();
+    }
+    
+    public Transform GetWeaponCollider()
+    {
+        return weaponCollider;
     }
 
     public void OnMove(InputValue value)

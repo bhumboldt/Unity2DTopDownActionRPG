@@ -14254,7 +14254,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc93c1e39b1d447886e645ed5f526c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentActiveWeapon: {fileID: 0}
 --- !u!1001 &805185086
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26826,6 +26825,7 @@ MonoBehaviour:
   _inputActionAsset: {fileID: -944628639613478452, guid: ae0ac2469041e44f1ba09da43bdf4a57, type: 3}
   dashSpeed: 4
   _trailRenderer: {fileID: 2130368601}
+  weaponCollider: {fileID: 1717635401}
 --- !u!212 &2135469600
 SpriteRenderer:
   m_ObjectHideFlags: 0
