@@ -251,7 +251,6 @@ MonoBehaviour:
   slashAnimPrefab: {fileID: 610309121502213577, guid: 679013834fa55425ea41ec1c55cbb90a, type: 3}
   slashAnimSpawnPoint: {fileID: 622316991}
   weaponCollider: {fileID: 1717635401}
-  inputActions: {fileID: -944628639613478452, guid: ae0ac2469041e44f1ba09da43bdf4a57, type: 3}
   swordAttackCooldown: 0.5
 --- !u!114 &80955159
 MonoBehaviour:
@@ -13930,6 +13929,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &608988202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 608988203}
+  - component: {fileID: 608988204}
+  m_Layer: 0
+  m_Name: Bow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &608988203
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608988202}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 789324136}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &608988204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608988202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3581915a9def048c6b5bcc0fc18e23ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -14105,6 +14148,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8117148879382021927, guid: 6734a859dedec4e2e9c4ee6a19391345, type: 3}
   m_PrefabInstance: {fileID: 641789791}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &643509141
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 643509142}
+  - component: {fileID: 643509143}
+  m_Layer: 0
+  m_Name: Staff
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &643509142
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643509141}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 789324136}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &643509143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643509141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ad1f0251b2294b269901b73b6610ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &715778959
 GameObject:
   m_ObjectHideFlags: 0
@@ -14340,6 +14427,8 @@ Transform:
   m_Children:
   - {fileID: 80955155}
   - {fileID: 622316991}
+  - {fileID: 608988203}
+  - {fileID: 643509142}
   m_Father: {fileID: 2135469601}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &789324137
@@ -14354,6 +14443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc93c1e39b1d447886e645ed5f526c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentActiveWeapon: {fileID: 80955158}
 --- !u!1001 &805185086
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22060,6 +22150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2024449226}
   - component: {fileID: 2024449227}
+  - component: {fileID: 2024449228}
   m_Layer: 5
   m_Name: ActiveInventory
   m_TagString: Untagged
@@ -22115,6 +22206,18 @@ MonoBehaviour:
   m_Spacing: {x: 25, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &2024449228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024449225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db5dea5b76b084c92b717ed0b71bbb5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2077087323
 GameObject:
   m_ObjectHideFlags: 0
