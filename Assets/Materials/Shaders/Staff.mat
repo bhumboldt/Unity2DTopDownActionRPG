@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Yellow
+  m_Name: Staff
   m_Shader: {fileID: -6465566751694194690, guid: 6465ab759c7db4713b731fc723c253fd, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -42,7 +42,7 @@ Material:
     m_Ints: []
     m_Floats: []
     m_Colors:
-    - _Color: {r: 2.0162082, g: 0.57619727, b: 0.27580214, a: 0}
+    - _Color: {r: 10.058135, g: 3.9199643, b: 0.23722014, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5699274472058724986
 MonoBehaviour:
