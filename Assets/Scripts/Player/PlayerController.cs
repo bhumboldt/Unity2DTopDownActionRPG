@@ -21,6 +21,7 @@ public class PlayerController : Singleton<PlayerController>
     private Rigidbody2D _rigidbody;
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
+    private Knockback _knockback;
 
     private bool isDashing = false;
     private bool facingLeft = false;
@@ -29,6 +30,7 @@ public class PlayerController : Singleton<PlayerController>
     protected override void Awake()
     {
         base.Awake();
+        _knockback = GetComponent<Knockback>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -60,6 +62,10 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Move()
     {
+        if (_knockback.GettingKnockedBack)
+        {
+            return;
+        }
         var currPosition = _rigidbody.position;
         var newPosition = currPosition + _movement * (moveSpeed * Time.fixedDeltaTime);
         _rigidbody.MovePosition(newPosition);

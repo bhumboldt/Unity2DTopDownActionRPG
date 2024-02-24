@@ -27612,6 +27612,9 @@ GameObject:
   - component: {fileID: 2135469604}
   - component: {fileID: 2135469605}
   - component: {fileID: 2135469606}
+  - component: {fileID: 2135469608}
+  - component: {fileID: 2135469607}
+  - component: {fileID: 2135469609}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -27832,6 +27835,48 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortAtRoot: 0
+--- !u!114 &2135469607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135469598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0daff9ea7de954e86a58325a78411471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whiteFlashMaterial: {fileID: 2100000, guid: 860e549f0653b4541aac7ce589563cac, type: 2}
+  restoreTime: 0.2
+--- !u!114 &2135469608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135469598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af5888516269646d790998b863243d44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackTime: 0.2
+--- !u!114 &2135469609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135469598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d2f0fa5d03654cc79e6c8c1661e9463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  knockBackThrustAmount: 10
+  _damageRecoveryTime: 1
 --- !u!1001 &1618105844076414926
 PrefabInstance:
   m_ObjectHideFlags: 0
