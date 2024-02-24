@@ -8,11 +8,13 @@ public class EnemyPathfinding : MonoBehaviour
     private Vector2 _moveDirection;
     private Rigidbody2D _rigidbody;
     private Knockback _knockback;
+    private SpriteRenderer _spriteRenderer;
     
     private void Awake()
     {
         _knockback = GetComponent<Knockback>();
         _rigidbody = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
     
     public void SetMoveDirection(Vector2 movement)
@@ -28,6 +30,15 @@ public class EnemyPathfinding : MonoBehaviour
         }
         
         this.Move();
+
+        if (_moveDirection.x < 0)
+        {
+            _spriteRenderer.flipX = true;
+        }
+        else
+        {
+            _spriteRenderer.flipX = false;
+        }
     }
     
     private void Move()
