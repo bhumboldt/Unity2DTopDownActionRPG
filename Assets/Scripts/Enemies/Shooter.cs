@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,10 +14,58 @@ public class Shooter : MonoBehaviour, IEnemy
     [SerializeField] [Range(0, 359)] private float angleSpread;
     [SerializeField] private float startingDistance = 0.1f;
     [SerializeField] private bool stagger;
+    [Tooltip("Stagger has to be enabled for oscillate to work properly.")]
     [SerializeField] private bool oscillate;
     
     private bool isShooting = false;
-    
+
+    private void OnValidate()
+    {
+        if (oscillate)
+        {
+            stagger = true;
+        }
+        else
+        {
+            stagger = false;
+        }
+
+        if (projectilesPerBurst < 1)
+        {
+            projectilesPerBurst = 1;
+        }
+
+        if (burstCount < 1)
+        {
+            burstCount = 1;
+        }
+
+        if (timeBetweenBursts < 0.1f)
+        {
+            timeBetweenBursts = 0.1f;
+        }
+
+        if (restTime < 0.1f)
+        {
+            restTime = 0.1f;
+        }
+
+        if (startingDistance < 0.1f)
+        {
+            startingDistance = 0.1f;
+        }
+
+        if (angleSpread == 0)
+        {
+            projectilesPerBurst = 1;
+        }
+
+        if (bulletMoveSpeed <= 0)
+        {
+            bulletMoveSpeed = 1;
+        }
+}
+
     public void Attack()
     {
         if (!isShooting)
