@@ -21667,12 +21667,20 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7018081579919699074, guid: 4fdbfb14532b54daba1266f4b17e408c, type: 3}
+      propertyPath: angleSpread
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018081579919699074, guid: 4fdbfb14532b54daba1266f4b17e408c, type: 3}
       propertyPath: bulletMoveSpeed
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7018081579919699074, guid: 4fdbfb14532b54daba1266f4b17e408c, type: 3}
       propertyPath: timeBetweenBursts
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018081579919699074, guid: 4fdbfb14532b54daba1266f4b17e408c, type: 3}
+      propertyPath: projectilesPerBurst
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
