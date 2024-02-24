@@ -6,7 +6,18 @@ using UnityEngine;
 public class Staff : MonoBehaviour, IWeapon
 {
     [SerializeField] private WeaponInfo weaponInfo;
+    [SerializeField] private GameObject magicLaser;
+    [SerializeField] private Transform magicSpawnPoint;
+
+    private Animator _animator;
     
+    readonly int FIRE_HASH = Animator.StringToHash("Fire");
+
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
+
     public WeaponInfo GetWeaponInfo()
     {
         return weaponInfo;
@@ -35,8 +46,13 @@ public class Staff : MonoBehaviour, IWeapon
         }
     }
 
+    public void SpawnStaffProjectileAnimEvent()
+    {
+        GameObject newLaser = Instantiate(magicLaser, magicSpawnPoint.position, Quaternion.identity);
+    }
+
     public void Attack()
     {
-        Debug.Log("Staff Attack");
+        _animator.SetTrigger(FIRE_HASH);
     }
 }

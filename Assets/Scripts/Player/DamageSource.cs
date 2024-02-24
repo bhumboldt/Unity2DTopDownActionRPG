@@ -5,8 +5,14 @@ using UnityEngine;
 
 public class DamageSource : MonoBehaviour
 {
-    [SerializeField] private int damage = 1;
-    
+    private int damage = 1;
+
+    private void Start()
+    {
+        MonoBehaviour currentActiveWeapon = ActiveWeapon.Instance.CurrentActiveWeapon;
+        damage = (currentActiveWeapon as IWeapon).GetWeaponInfo().weaponDamage;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         var enemyHealth = other.gameObject.GetComponent<EnemyHealth>();
