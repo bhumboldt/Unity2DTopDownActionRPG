@@ -426,14 +426,6 @@ PrefabInstance:
       propertyPath: m_ChildCameras.Array.size
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3106909006603375997, guid: 1bc045abbbbc64e0a9d9519c1eb41376, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 11.102365
-      objectReference: {fileID: 0}
-    - target: {fileID: 3106909006603375997, guid: 1bc045abbbbc64e0a9d9519c1eb41376, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -6.627492
-      objectReference: {fileID: 0}
     - target: {fileID: 3516915105205882659, guid: 1bc045abbbbc64e0a9d9519c1eb41376, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.8923646
@@ -477,14 +469,6 @@ PrefabInstance:
     - target: {fileID: 4933305894780871937, guid: 1bc045abbbbc64e0a9d9519c1eb41376, type: 3}
       propertyPath: m_Name
       value: Cameras
-      objectReference: {fileID: 0}
-    - target: {fileID: 8142255362815163063, guid: 1bc045abbbbc64e0a9d9519c1eb41376, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 11.102365
-      objectReference: {fileID: 0}
-    - target: {fileID: 8142255362815163063, guid: 1bc045abbbbc64e0a9d9519c1eb41376, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -6.627492
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
