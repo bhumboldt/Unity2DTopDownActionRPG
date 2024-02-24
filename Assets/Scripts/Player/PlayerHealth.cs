@@ -29,17 +29,21 @@ public class PlayerHealth : MonoBehaviour
     {
         EnemyHealth enemy = other.gameObject.GetComponent<EnemyHealth>();
 
-        if (enemy && _canTakeDamage)
+        if (enemy)
         {
-            TakeDamage(1);
-            _knockback.GetKnockedBack(other.gameObject.transform, knockBackThrustAmount);
-            _flash.DoFlash();
-            StartCoroutine(RecoveryRoutine());
+            TakeDamage(1, other.transform);
         }
     }
     
-    private void TakeDamage(int damage)
+    public void TakeDamage(int damage, Transform hitTransform)
     {
+        if (!_canTakeDamage)
+        {
+            return;
+        }
+        
+        _knockback.GetKnockedBack(hitTransform, knockBackThrustAmount);
+        _flash.DoFlash();
         _canTakeDamage = false;
         _currentHealth -= damage;
         Debug.Log(_currentHealth);
@@ -47,6 +51,8 @@ public class PlayerHealth : MonoBehaviour
         {
             // Destroy(gameObject);
         }
+        
+        StartCoroutine(RecoveryRoutine());
     }
 
     private IEnumerator RecoveryRoutine()
