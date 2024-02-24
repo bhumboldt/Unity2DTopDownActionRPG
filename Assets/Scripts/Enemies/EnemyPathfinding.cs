@@ -47,4 +47,9 @@ public class EnemyPathfinding : MonoBehaviour
         var newPosition = currPosition + _moveDirection * (moveSpeed * Time.fixedDeltaTime);
         _rigidbody.MovePosition(newPosition);
     }
+    
+    public void StopMoving()
+    {
+        _moveDirection = Vector2.zero;
+    }
 }
