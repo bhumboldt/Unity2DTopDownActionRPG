@@ -12,10 +12,11 @@ public class PlayerController : Singleton<PlayerController>
     }
     
     [SerializeField] private float moveSpeed = 5.0f;
-    [SerializeField] private InputActionAsset _inputActionAsset;
     [SerializeField] private float dashSpeed = 4f;
     [SerializeField] private TrailRenderer _trailRenderer;
     [SerializeField] private Transform weaponCollider;
+    
+    private PlayerControls _playerControls;
     
     private Vector2 _movement;
     private Rigidbody2D _rigidbody;
@@ -30,15 +31,21 @@ public class PlayerController : Singleton<PlayerController>
     protected override void Awake()
     {
         base.Awake();
+        _playerControls = new PlayerControls();
         _knockback = GetComponent<Knockback>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
     }
+    
+    private void OnEnable()
+    {
+        _playerControls.Enable();
+    }
 
     private void Start()
     {
-        _inputActionAsset.FindActionMap("Combat").FindAction("Dash").performed += _ => Dash();
+        _playerControls.Combat.Dash.performed += _ => Dash();
         startingMoveSpeed = moveSpeed;
     }
 
