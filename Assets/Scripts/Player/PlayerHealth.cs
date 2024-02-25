@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : Singleton<PlayerHealth>
 {
     [SerializeField] private int maxHealth = 5;
     [SerializeField] private float knockBackThrustAmount = 10.0f;
@@ -14,8 +14,9 @@ public class PlayerHealth : MonoBehaviour
     private Knockback _knockback;
     private Flash _flash;
     
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         _flash = GetComponent<Flash>();
         _knockback = GetComponent<Knockback>();
     }
@@ -55,6 +56,15 @@ public class PlayerHealth : MonoBehaviour
         }
         
         StartCoroutine(RecoveryRoutine());
+    }
+    
+    public void Heal(int healAmount)
+    {
+        _currentHealth += healAmount;
+        if (_currentHealth > maxHealth)
+        {
+            _currentHealth = maxHealth;
+        }
     }
 
     private IEnumerator RecoveryRoutine()
