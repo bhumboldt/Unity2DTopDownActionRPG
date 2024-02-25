@@ -603,23 +603,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bc045abbbbc64e0a9d9519c1eb41376, type: 3}
---- !u!1 &609976729 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 771141888007975027, guid: b9ebd559978a041cca29a3307d528a38, type: 3}
-  m_PrefabInstance: {fileID: 1672802261}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &609976731
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 609976729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5654c08a604f945839c70f76475167d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -13870,22 +13853,6 @@ CompositeCollider2D:
         Y: -80000000
       - X: 207500000
         Y: -80000000
-    - - X: -70000000
-        Y: 50000000
-      - X: -80000000
-        Y: 50000000
-      - X: -80000000
-        Y: 40000000
-      - X: -70000000
-        Y: 40000000
-    - - X: -80000000
-        Y: 30000000
-      - X: -90000000
-        Y: 30000000
-      - X: -90000000
-        Y: 20000000
-      - X: -80000000
-        Y: 20000000
   m_CompositePaths:
     m_Paths:
     - - {x: 20.749992, y: 12}
@@ -14098,14 +14065,6 @@ CompositeCollider2D:
       - {x: -21, y: 8.374993}
       - {x: -20.999992, y: -7.812507}
       - {x: -20.812489, y: -8}
-    - - {x: -7.0000296, y: 4}
-      - {x: -7.0000296, y: 5}
-      - {x: -8, y: 4.999971}
-      - {x: -7.9999704, y: 4}
-    - - {x: -8.00003, y: 2}
-      - {x: -8.00003, y: 3}
-      - {x: -9, y: 2.999971}
-      - {x: -8.99997, y: 2}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -16441,16 +16400,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741826
-  - first: {x: -9, y: 2, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 37
-      m_TileSpriteIndex: 38
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741826
   - first: {x: 13, y: 2, z: 0}
     second:
       serializedVersion: 2
@@ -16566,16 +16515,6 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 37
       m_TileSpriteIndex: 7
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741826
-  - first: {x: -8, y: 4, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 37
-      m_TileSpriteIndex: 38
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -17997,7 +17936,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 345
+  - m_RefCount: 343
     m_Data: {fileID: 11400000, guid: 360552eed294246c6af6ab32468fb396, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -18078,14 +18017,14 @@ Tilemap:
     m_Data: {fileID: 1078128046, guid: 6723b835425b64741b01965de9ecc12f, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 76
+  - m_RefCount: 74
     m_Data: {fileID: -187725099, guid: 6723b835425b64741b01965de9ecc12f, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 213031475, guid: 6723b835425b64741b01965de9ecc12f, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: -563532220, guid: 6723b835425b64741b01965de9ecc12f, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 369
+  - m_RefCount: 367
     m_Data:
       e00: 1
       e01: 0
@@ -18104,7 +18043,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 369
+  - m_RefCount: 367
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -18185,10 +18124,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 771141888007975027, guid: b9ebd559978a041cca29a3307d528a38, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 609976731}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9ebd559978a041cca29a3307d528a38, type: 3}
 --- !u!1001 &1853529742
 PrefabInstance:

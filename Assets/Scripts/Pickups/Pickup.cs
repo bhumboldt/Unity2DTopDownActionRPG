@@ -97,8 +97,7 @@ public class Pickup : MonoBehaviour
                 EconomyManager.Instance.UpdateCurrentGold();
                 break;
             case PickupType.StaminaGlobe:
-                Debug.Log("Stamina");
-                // Add stamina to player's inventory
+                Stamina.Instance.AddStamina(1);
                 break;
         }
     }
