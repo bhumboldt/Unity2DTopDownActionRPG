@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : Singleton<PlayerHealth>
 {
@@ -10,7 +11,8 @@ public class PlayerHealth : Singleton<PlayerHealth>
     [SerializeField] private float _damageRecoveryTime = 1.0f;
     private int _currentHealth;
     private bool _canTakeDamage = true;
-    
+
+    private Slider healthSlider;
     private Knockback _knockback;
     private Flash _flash;
     
@@ -24,6 +26,8 @@ public class PlayerHealth : Singleton<PlayerHealth>
     private void Start()
     {
         _currentHealth = maxHealth;
+        
+        UpdateHealthSlider();
     }
 
     private void OnCollisionStay2D(Collision2D other)
@@ -50,12 +54,20 @@ public class PlayerHealth : Singleton<PlayerHealth>
         _canTakeDamage = false;
         _currentHealth -= damage;
         Debug.Log(_currentHealth);
-        if (_currentHealth <= 0)
-        {
-            // Destroy(gameObject);
-        }
+        CheckIfPlayerDeath();
         
         StartCoroutine(RecoveryRoutine());
+        UpdateHealthSlider();
+    }
+
+    private void CheckIfPlayerDeath()
+    {
+        if (_currentHealth <= 0)
+        {
+            _currentHealth = 0;
+            Debug.Log("Player Death");
+            // Destroy(gameObject);
+        }
     }
     
     public void Heal(int healAmount)
@@ -65,11 +77,24 @@ public class PlayerHealth : Singleton<PlayerHealth>
         {
             _currentHealth = maxHealth;
         }
+
+        UpdateHealthSlider();
     }
 
     private IEnumerator RecoveryRoutine()
     {
         yield return new WaitForSeconds(_damageRecoveryTime);
         _canTakeDamage = true;
+    }
+
+    private void UpdateHealthSlider()
+    {
+        if (healthSlider == null)
+        {
+            healthSlider = GameObject.Find("HealthSlider").GetComponent<Slider>();
+        }
+
+        healthSlider.maxValue = maxHealth;
+        healthSlider.value = _currentHealth;
     }
 }
