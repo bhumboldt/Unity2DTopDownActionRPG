@@ -32,15 +32,23 @@ public class Stamina : Singleton<Stamina>
     {
         CurrentStamina -= amount;
         UpdateStaminaUI();
+        StopAllCoroutines();
+        StartCoroutine(RefreshStaminaRoutine());
     }
     
     public void AddStamina(int amount)
     {
-        if (CurrentStamina < maxStamina)
+        if (CurrentStamina < maxStamina && !PlayerHealth.Instance.isDead)
         {
             CurrentStamina += amount;
             UpdateStaminaUI();
         }
+    }
+
+    public void ReplenishStaminaOnDeath()
+    {
+        CurrentStamina = startingStamina;
+        UpdateStaminaUI();
     }
 
     private IEnumerator RefreshStaminaRoutine()
@@ -56,20 +64,15 @@ public class Stamina : Singleton<Stamina>
     {
         for (int i = 0; i < maxStamina; i++)
         {
+            var staminaImage = staminaContainer.GetChild(i).GetComponent<Image>();
             if (i <= CurrentStamina - 1)
             {
-                staminaContainer.GetChild(i).GetComponent<Image>().sprite = fullStaminaImage;
+                staminaImage.sprite = fullStaminaImage;
             }
             else
             {
-                staminaContainer.GetChild(i).GetComponent<Image>().sprite = emptyStaminaImage;
+                staminaImage.sprite = emptyStaminaImage;
             }
-        }
-
-        if (CurrentStamina < maxStamina)
-        {
-            StopAllCoroutines();
-            StartCoroutine(RefreshStaminaRoutine());
         }
     }
 }

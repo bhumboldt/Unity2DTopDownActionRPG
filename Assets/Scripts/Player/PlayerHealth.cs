@@ -81,6 +81,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
     {
         yield return new WaitForSeconds(2);
         Destroy(gameObject);
+        Stamina.Instance.ReplenishStaminaOnDeath();
         SceneManager.LoadScene("Scene_1");
     }
     
